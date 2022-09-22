@@ -6,8 +6,9 @@ class Categories extends React.Component {
         super(props)
         this.state = {
             categories: [],
-            activeCategory: "",
+            activeCategory: null,
             difficulties: "easy",
+            noOfqestion: null,
         }
     }
 
@@ -31,14 +32,16 @@ class Categories extends React.Component {
 
         let difficulties = ["easy", "medium", "hard"];
 
+        let noOfqestion = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
         let category_id = this.state.activeCategory;
         let difficulties_id = this.state.difficulties;
-
+        let noOfqestion_id = this.state.noOfqestion;
 
 
         return (
             <div className="container">
-                <form className="options" onSubmit={this.handleSubmit}>
+                <form className="options box" onSubmit={this.handleSubmit}>
                     <label htmlFor="categories"> Select Categories: </label>
                     <select id="categories"
                         onChange={this.handleChange}
@@ -65,7 +68,18 @@ class Categories extends React.Component {
                             })
                         }
                     </select>
-                    <Link to={`/quiz/${category_id}/${difficulties_id}`}>
+                    <label htmlFor="noOfqestion">Number Of Questions:</label>
+                    <select id="noOfqestion"
+                        onChange={this.handleChange}
+                        name="noOfqestion"
+                        value={this.state.noOfqestion}>
+                        {
+                            noOfqestion.map(elm => {
+                                return <option value={elm}>{elm}</option>
+                            })
+                        }
+                    </select>
+                    <Link to={`/quiz/${noOfqestion_id}/${category_id}/${difficulties_id}`}>
                         <input type="submit" value="submit" className="submit" />
                     </Link>
                 </form>

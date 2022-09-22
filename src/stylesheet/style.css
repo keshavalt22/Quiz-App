@@ -177,7 +177,7 @@ h1 {
     color: white;
 }
 
-.box button {
+.btn {
     font-size: 18px;
     background-color: gray;
     border-radius: 8px;
@@ -185,6 +185,7 @@ h1 {
     margin: 12px;
     padding: 12px 32px;
 }
+
 
 .options {
     text-align: left;
@@ -212,4 +213,41 @@ h1 {
     color: white;
     border-radius: 8px;
     border: 1px solid gray;
+}
+
+.center {
+    text-align: center;
+}
+
+.score {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.score span {
+    color: red;
+}
+
+.nav {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.result {
+    text-align: center;
+    padding: 24px;
+}
+
+.result h3 {
+    font-size: 44px;
+    font-weight: 700;
+    color: gold;
+}
+
+.result h4 {
+    font-size: 32px;
+    color: orange;
+    font-weight: 700;
+    margin-bottom: 24px;
 }
